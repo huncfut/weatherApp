@@ -1,4 +1,24 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import React from 'react'
+import {AppRegistry, View, Text, ScrollView} from 'react-native'
+import Header from './src/Header'
+import LocationList from './src/LocationList'
 
-AppRegistry.registerComponent('weatherApp', () => App);
+const App = () => {
+  return (
+    <View style={styles.mainView}>
+      <Header title="Weather" />
+      <ScrollView>
+        <LocationList />
+      </ScrollView>
+    </View>
+  )
+}
+
+const styles = {
+  mainView: {
+    backgroundColor: '#fdeceb',
+    flex: 1
+  }
+}
+
+AppRegistry.registerComponent('weatherApp', () => App)
